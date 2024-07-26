@@ -12,7 +12,7 @@ RUN pip3 install tensorflow-datasets
 # install openvino
 ENV http_proxy $HTTP_PROXY
 ENV https_proxy $HTTP_PROXY
-ARG DOWNLOAD_LINK=https://registrationcenter-download.intel.com/akdlm/irc_nas/17662/l_openvino_toolkit_p_2021.3.394.tgz
+ARG DOWNLOAD_LINK=https://github.com/openvinotoolkit/openvino/archive/refs/tags/2024.2.0.tar.gz
 ARG INSTALL_DIR=/opt/intel/computer_vision_sdk
 ARG TEMP_DIR=/tmp/openvino_installer
 RUN apt-get update && apt-get install -y --no-install-recommends \
