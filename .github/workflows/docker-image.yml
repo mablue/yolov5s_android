@@ -10,15 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # Checkout code from repository
 
-      - name: Login to Docker Hub (optional)
-        #  If your Docker image needs to be pushed to a private registry
-        #  you'll need to login first. Uncomment and configure accordingly.
-        # env:
-        #   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        #   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        # run: |
-        #   docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-
       - name: Install Docker dependencies
         run: |
           sudo apt-get update
