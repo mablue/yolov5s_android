@@ -21,13 +21,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     sudo \
     lsb-release && \
     rm -rf /var/lib/apt/lists/*
-RUN mkdir -p $TEMP_DIR && cd $TEMP_DIR && \
-    wget -c $DOWNLOAD_LINK && \
-    tar xf l_openvino_toolkit*.tgz && \
-    cd l_openvino_toolkit* && \
-    sed -i 's/decline/accept/g' silent.cfg && \
-    ./install.sh -s silent.cfg && \
-    rm -rf $TEMP_DIR
+RUN mkdir -p $TEMP_DIR && cd $TEMP_DIR
+RUN wget -c $DOWNLOAD_LINK
+RUN tar xf l_openvino_toolkit*.tgz
+RUN cd l_openvino_toolkit*
+RUN sed -i 's/decline/accept/g' silent.cfg
+RUN ./install.sh -s silent.cfg
+RUN rm -rf $TEMP_DIR
 RUN pip3 install networkx
 RUN pip3 install defusedxml
 
