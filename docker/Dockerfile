@@ -32,8 +32,8 @@ RUN pip3 install networkx
 RUN pip3 install defusedxml
 
 # install requirements for yolov5
-COPY yolov5/requirements.txt /yolov5/requirements.txt
-RUN cd /yolov5 && pip3 install -r requirements.txt
+COPY yolov5/requirements.txt ./yolov5/requirements.txt
+RUN cd ./yolov5 && pip3 install -r requirements.txt
 RUN apt-get update --fix-missing
 RUN apt-get install -y libgl1 libgtk-3-0 libgtk-3-dev
 RUN pip3 install pycocotools
