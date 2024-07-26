@@ -10,17 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # Checkout code from repository
 
-      - name: Install Docker dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io docker-compose
-
-      - name: Clone repository with submodules
-        run: git clone --recursive https://github.com/lp6m/yolov5s_android
-
-      - name: Navigate to project directory
-        run: cd yolov5s_android
-
       - name: Build Docker image
         run: docker build ./ -f ./docker/Dockerfile -t yolov5s_android
 
